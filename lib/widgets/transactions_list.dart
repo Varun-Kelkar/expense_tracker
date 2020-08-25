@@ -9,10 +9,7 @@ class TransactionList extends StatelessWidget {
 
   TransactionList(this.transactions,this.deleteTrans);
   Widget build(BuildContext context) {
-    return Container(
-        height: 400,
-        //The below function is called for every element in transactions list
-        child: transactions.isEmpty
+    return transactions.isEmpty
             ? Column(
                 children: <Widget>[
                   Text(
@@ -30,6 +27,7 @@ class TransactionList extends StatelessWidget {
                       ))
                 ],
               )
+                //The below function is called for every element in transactions list
             : ListView.builder(
                 itemBuilder: (ctx, index) {
                   //Function returns widget to be rendered for each list element
@@ -59,6 +57,6 @@ class TransactionList extends StatelessWidget {
                   );
                 },
                 itemCount: transactions.length,
-              ));
+              );
   }
 }
